@@ -1,10 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100,200,300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
     font-family: 'Poppins', sans-serif;
+}
+
+*::selection {
+    background: var(--selection-bg-color);
+    color: var(--selection-text-color);
+}
+
+:root {
+    --primary-color: #c40094;
+    --secondayr-color: #950170;
+
+    --text-shadow-color: rgba(0, 0, 0, 0.3);
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+
+    --selection-bg-color: #3367D1;
+    --selection-text-color: #fff;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 body {
@@ -87,13 +110,13 @@ body {
 .home-content h1 {
     font-size: 78px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px var(--text-shadow-color);
 }
 
 .home-content p {
     font-size: 16px;
     text-align: justify;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px var(--text-shadow-color);
     margin-bottom: 30px;
 }
 
@@ -175,7 +198,7 @@ body {
     font-size: 16px;
     color: #fff;
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--box-shadow-color);
     cursor: pointer;
     transition: 0.5s;
 }
@@ -331,14 +354,14 @@ body {
 }
 
 .quiz-footer .next-btn.active:hover {
-    background: #950170;
-    border-color: #950170;
+    background: var(--secondayr-color);
+    border-color: var(--secondayr-color);
 }
 
 .quiz-footer .next-btn.active {
     pointer-events: auto;
-    background: #c40094;
-    border-color: #c40094;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
     color: #fff;
 }
 
@@ -396,7 +419,7 @@ body {
     height: 210px;
     background: #09001d;
     border-radius: 50%;
-    
+
 }
 
 .circular-progress .progress-value {
@@ -430,12 +453,12 @@ body {
     transition: 0.5s;
 }
 
-.buttons button:nth-child(1):hover{
+.buttons button:nth-child(1):hover {
     background: #950170;
     border-color: #950170;
 }
 
-.buttons button:nth-child(2){
+.buttons button:nth-child(2) {
     background: transparent;
     color: #c40094;
 }
