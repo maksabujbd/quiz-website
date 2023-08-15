@@ -58,7 +58,8 @@ function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 
-    let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+    let optionTag;
+    optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
 <div class="option"><span>${questions[index].options[1]}</span></div>
 <div class="option"><span>${questions[index].options[2]}</span></div>
 <div class="option"><span>${questions[index].options[3]}</span></div>
@@ -118,7 +119,7 @@ function showResultBox() {
     scoreText.textContent = `Your Score ${userScore} out of ${questions.length}`;
 
     const circularProgress = document.querySelector('.circular-progress');
-    const progressvalue = document.querySelector('.progress-value');
+    const progressValue = document.querySelector('.progress-value');
     let progressStartValue = -1;
     let progressEndValue = (userScore / questions.length) * 100;
     let speed = 20;
@@ -126,8 +127,7 @@ function showResultBox() {
     let progress = setInterval(() => {
         progressStartValue++;
         
-        // console.warn(progressStartValue);
-        progressvalue.textContent = `${progressStartValue}%`;
+        progressValue.textContent = `${progressStartValue}%`;
         circularProgress.style.background = `conic-gradient(#c40094, ${progressStartValue * 3.6}deg, rgba(255, 255, 255, 0.1) 0deg)`;
         
         if (progressStartValue === progressEndValue) {
